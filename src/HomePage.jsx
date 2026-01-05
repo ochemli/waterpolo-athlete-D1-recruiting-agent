@@ -46,6 +46,28 @@ function HomePage() {
           </div>
         </div>
 
+        <div className="photo-gallery">
+          <h2>Photo Gallery</h2>
+          <div className="gallery-grid">
+            <div className="gallery-item">
+              <img 
+                src="/images/Screenshot 2026-01-05 at 12.20.37 PM.png" 
+                alt="Yasmine Sowka making a save in goal during water polo game"
+                className="gallery-image"
+              />
+              <p className="image-caption">In Action: Defending the Goal</p>
+            </div>
+            <div className="gallery-item">
+              <img 
+                src="/images/Screenshot 2026-01-05 at 12.19.45 PM.png" 
+                alt="Yasmine Sowka professional recruiting portrait"
+                className="gallery-image"
+              />
+              <p className="image-caption">Official Recruiting Photo</p>
+            </div>
+          </div>
+        </div>
+
         <div className="profile-link-section">
           <h2>Complete Recruiting Profile</h2>
           <p>View the full profile including personal statement, photo highlights, game footage, training regimen, and coach references.</p>
