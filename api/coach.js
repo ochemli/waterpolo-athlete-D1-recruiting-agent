@@ -3,6 +3,36 @@ export default async function handler(req, res) {
 
   try {
     const input = req.body || {};
+    const profile = input.profile || {};
+
+    // Build context from profile
+    let profileContext = '';
+    if (profile.athleteName) {
+      profileContext += `\nATHLETE PROFILE:\n`;
+      profileContext += `Name: ${profile.athleteName}\n`;
+      if (profile.achievements) {
+        profileContext += `Key Achievements: ${profile.achievements}\n`;
+      }
+      if (profile.recentHighlights) {
+        profileContext += `Recent Highlights: ${profile.recentHighlights}\n`;
+      }
+      if (profile.upcomingEvents) {
+        profileContext += `Upcoming Events: ${profile.upcomingEvents}\n`;
+      }
+      if (profile.videoLinks) {
+        profileContext += `Video Links: ${profile.videoLinks}\n`;
+      }
+    }
+
+    // Add writing style for "your_style" mode
+    let styleInstructions = '';
+    if (input.mode === 'your_style' && profile.writingStyle) {
+      styleInstructions = `\n\nWRITING STYLE INSTRUCTIONS:
+The athlete has provided writing samples. Match their tone, vocabulary, and personality:
+${profile.writingStyle}
+
+Mimic their style: same level of formality, sentence structure, and energy. Make it sound like THEY wrote it.`;
+    }
 
     const system = `
 You are a Recruiting Coach Comms Agent for NCAA Division I women's water polo.
@@ -12,12 +42,14 @@ You must do ONLY what the user selected in "mode":
 - draft_email: write a concise coach email.
 - update_email: write an update email with 1–3 bullets and a clear ask.
 - analyze_reply: classify the coach reply into A/B/C/D/E and give next action.
+- your_style: draft an email in the athlete's PERSONAL writing style (use their voice, tone, and personality).
 
 Email constraints:
 - Default 120–180 words unless length specifies short/long.
 - Never apologize. Never say "just checking in."
 - Include athlete name, grad year, position, and one clear ask.
 - If a video link exists, include it once.
+- Use profile information when available to add specific, relevant details.
 
 Response analysis buckets:
 A) Strong interest (clear next step) - Coach explicitly mentions roster needs, invites to campus, asks for specific dates, or requests immediate follow-up
@@ -46,6 +78,7 @@ When analyzing a coach reply (mode: analyze_reply), you MUST return:
    - If NO: Why not (e.g., "Coach asked you to initiate," "Soft rejection," "Wait for their response")
 
 Format your analysis clearly with headers and be direct.
+${profileContext}${styleInstructions}
 `;
 
     const user = `User request JSON:\n${JSON.stringify(input, null, 2)}`;

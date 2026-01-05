@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import ProfilePage from './ProfilePage'
 import './App.css'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('main')
   const [formData, setFormData] = useState({
     athleteName: '',
     gradYear: '',
@@ -29,10 +31,17 @@ function App() {
     setOutput('Generating your personalized response...')
 
     try {
+      // Get saved profile data
+      const profileData = localStorage.getItem('athleteProfile')
+      const profile = profileData ? JSON.parse(profileData) : null
+
       const res = await fetch('/api/coach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          profile // Include profile data in the request
+        })
       })
 
       const data = await res.json()
@@ -51,6 +60,11 @@ function App() {
   const isDraftEmail = formData.mode === 'draft_email'
   const isAnalyzeReply = formData.mode === 'analyze_reply'
   const isUpdateEmail = formData.mode === 'update_email'
+  const isYourStyle = formData.mode === 'your_style'
+
+  if (currentPage === 'profile') {
+    return <ProfilePage />
+  }
 
   return (
     <div className="app">
@@ -59,6 +73,21 @@ function App() {
           <div className="header-icon">🤽‍♀️</div>
           <h1>Recruiting Coach AI</h1>
           <p className="subtitle">Draft emails + analyze coach replies. Blunt, clean, D1-focused.</p>
+          
+          <div className="nav-tabs">
+            <button 
+              className={currentPage === 'main' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('main')}
+            >
+              Generate
+            </button>
+            <button 
+              className={currentPage === 'profile' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('profile')}
+            >
+              Profile & Updates
+            </button>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="form">
@@ -112,10 +141,11 @@ function App() {
               <option value="draft_email">Draft a coach email</option>
               <option value="analyze_reply">Analyze a coach reply</option>
               <option value="update_email">Draft an update email</option>
+              <option value="your_style">Draft in YOUR style</option>
             </select>
           </div>
 
-          {(isDraftEmail || isUpdateEmail) && (
+          {(isDraftEmail || isUpdateEmail || isYourStyle) && (
             <>
               <div className="form-group">
                 <label>Highlights / Update (1–3 bullets)</label>

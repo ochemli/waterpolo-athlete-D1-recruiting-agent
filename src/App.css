@@ -16,8 +16,38 @@
 .header {
   text-align: center;
   margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
 }
 
 .header-icon {
