@@ -52,6 +52,7 @@ You must do ONLY what the user selected in "mode":
 - update_email: write an update email with 1–3 bullets and a clear ask.
 - analyze_reply: classify the coach reply into A/B/C/D/E and give next action.
 - your_style: draft an email in the athlete's PERSONAL writing style (use their voice, tone, and personality).
+- chat: conversational assistant mode - answer questions, give advice, help manage data.
 
 Email constraints:
 - Default 120–180 words unless length specifies short/long.
@@ -90,7 +91,24 @@ Format your analysis clearly with headers and be direct.
 ${profileContext}${styleInstructions}${customInstructionsText}
 `;
 
-    const user = `User request JSON:\n${JSON.stringify(input, null, 2)}`;
+    let messages;
+    
+    // Handle chat mode differently - use conversation history
+    if (input.mode === 'chat') {
+      const chatHistory = input.chatHistory || [];
+      messages = [
+        { role: "system", content: input.systemContext || system },
+        ...chatHistory.slice(-10), // Keep last 10 messages for context
+        { role: "user", content: input.userMessage }
+      ];
+    } else {
+      // Regular form-based modes
+      const user = `User request JSON:\n${JSON.stringify(input, null, 2)}`;
+      messages = [
+        { role: "system", content: system },
+        { role: "user", content: user }
+      ];
+    }
 
     const resp = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -100,10 +118,7 @@ ${profileContext}${styleInstructions}${customInstructionsText}
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: system },
-          { role: "user", content: user }
-        ]
+        messages: messages
       })
     });
 

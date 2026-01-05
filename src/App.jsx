@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ProfilePage from './ProfilePage'
 import UniversityTracker from './UniversityTracker'
 import KnowledgeBase from './KnowledgeBase'
+import ChatAssistant from './ChatAssistant'
 import universitiesData from './universities-data.json'
 import './App.css'
 
@@ -79,6 +80,10 @@ function App() {
     return <KnowledgeBase />
   }
 
+  if (currentPage === 'chat') {
+    return <ChatAssistant />
+  }
+
   return (
     <div className="app">
       <div className="container">
@@ -88,22 +93,28 @@ function App() {
           
           <div className="nav-tabs">
             <button 
+              className={currentPage === 'chat' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('chat')}
+            >
+              Chat
+            </button>
+            <button 
               className={currentPage === 'main' ? 'tab active' : 'tab'}
               onClick={() => setCurrentPage('main')}
             >
               Generate
             </button>
             <button 
-              className={currentPage === 'profile' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('profile')}
-            >
-              Profile
-            </button>
-            <button 
               className={currentPage === 'tracker' ? 'tab active' : 'tab'}
               onClick={() => setCurrentPage('tracker')}
             >
               Universities
+            </button>
+            <button 
+              className={currentPage === 'profile' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('profile')}
+            >
+              Profile
             </button>
             <button 
               className={currentPage === 'knowledge' ? 'tab active' : 'tab'}
