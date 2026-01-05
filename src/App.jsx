@@ -230,6 +230,7 @@ function App() {
             {output}
           </div>
         </div>
+        </div>
       )}
     </div>
   )
