@@ -65,7 +65,7 @@ function UniversityTracker() {
   return (
     <div className="tracker-page">
       <div className="tracker-header">
-        <h1>🎯 University Tracker</h1>
+        <h1>University Tracker</h1>
         <p className="subtitle">Manage recruiting relationships by school</p>
       </div>
 

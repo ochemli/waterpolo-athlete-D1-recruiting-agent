@@ -1,32 +1,32 @@
 .tracker-page {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: white;
 }
 
 .tracker-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem 2rem;
+  margin-bottom: 0;
 }
 
 .tracker-header h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
   margin-bottom: 0.5rem;
 }
 
+.subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
 .tracker-container {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .university-selector {
@@ -34,8 +34,10 @@
 }
 
 .university-selector h2 {
-  color: #2d3748;
+  color: #111827;
   margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .uni-grid {
@@ -46,38 +48,38 @@
 
 .uni-card {
   padding: 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   background: white;
 }
 
 .uni-card:hover {
-  border-color: #667eea;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .uni-card.active {
-  border-color: #667eea;
-  background: linear-gradient(135deg, #f0f4ff 0%, #fff5f5 100%);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
 }
 
 .uni-card h3 {
-  font-size: 1.1rem;
-  color: #2d3748;
+  font-size: 1rem;
+  color: #111827;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .uni-state, .uni-conference {
   display: inline-block;
-  background: #edf2f7;
+  background: #f3f4f6;
   padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  color: #4a5568;
+  color: #6b7280;
   margin-right: 0.5rem;
   margin-top: 0.25rem;
 }
@@ -85,15 +87,15 @@
 .comm-badge {
   display: block;
   margin-top: 0.5rem;
-  color: #667eea;
-  font-size: 0.8rem;
-  font-weight: 600;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .uni-details {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid rgba(102, 126, 234, 0.1);
+  border-top: 1px solid #e5e7eb;
 }
 
 .uni-header {
@@ -104,35 +106,39 @@
 }
 
 .uni-header h2 {
-  color: #2d3748;
-  font-size: 2rem;
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .uni-website {
-  color: #667eea;
+  color: #2563eb;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
 }
 
 .uni-website:hover {
-  color: #764ba2;
+  color: #1d4ed8;
 }
 
 .uni-info {
-  background: #f7fafc;
+  background: #f9fafb;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
 }
 
 .uni-info p {
   margin: 0.5rem 0;
-  color: #4a5568;
+  color: #374151;
+  font-size: 0.875rem;
 }
 
 .uni-notes {
-  color: #667eea !important;
+  color: #2563eb !important;
   font-style: italic;
 }
 
@@ -141,8 +147,10 @@
 }
 
 .coaches-section h3 {
-  color: #2d3748;
+  color: #111827;
   margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .coaches-list {
@@ -152,41 +160,43 @@
 }
 
 .coach-card {
-  background: linear-gradient(135deg, #f0f4ff 0%, #fff5f5 100%);
+  background: #f9fafb;
   padding: 1rem;
-  border-radius: 12px;
-  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .coach-card h4 {
-  color: #2d3748;
+  color: #111827;
   margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
 }
 
 .coach-position {
-  color: #718096;
-  font-size: 0.875rem;
+  color: #6b7280;
+  font-size: 0.8125rem;
   margin-bottom: 0.5rem;
 }
 
 .coach-email {
   display: block;
-  color: #667eea;
+  color: #2563eb;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   margin: 0.25rem 0;
 }
 
 .coach-phone {
-  color: #4a5568;
-  font-size: 0.875rem;
+  color: #374151;
+  font-size: 0.8125rem;
   margin: 0.25rem 0;
 }
 
 .coach-notes {
   margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #059669;
+  font-size: 0.8125rem;
+  color: #10b981;
   font-style: italic;
 }
 
@@ -195,21 +205,24 @@
 }
 
 .communications-section h3 {
-  color: #2d3748;
+  color: #111827;
   margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .add-comm {
-  background: linear-gradient(135deg, #f0fdf4 0%, #f0f4ff 100%);
+  background: #f9fafb;
   padding: 1.5rem;
-  border-radius: 12px;
-  border: 2px solid #10b981;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
   margin-bottom: 2rem;
 }
 
 .add-comm h4 {
-  color: #059669;
+  color: #111827;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .comm-form {
@@ -226,9 +239,9 @@
 
 .form-group label {
   display: block;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.875rem;
-  color: #4a5568;
+  color: #374151;
   margin-bottom: 0.5rem;
 }
 
@@ -236,47 +249,48 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-family: 'Inter', sans-serif;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: inherit;
 }
 
 .save-comm-btn {
-  padding: 0.875rem 1.5rem;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  padding: 0.625rem 1.25rem;
+  background: #10b981;
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 700;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   align-self: flex-start;
 }
 
 .save-comm-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  background: #059669;
 }
 
 .comm-timeline h4 {
-  color: #2d3748;
+  color: #111827;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .no-comms {
   text-align: center;
-  color: #718096;
+  color: #6b7280;
   padding: 2rem;
   font-style: italic;
+  font-size: 0.875rem;
 }
 
 .comm-entry {
   background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -290,18 +304,19 @@
 }
 
 .comm-date {
-  font-weight: 600;
-  color: #4a5568;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
 }
 
 .comm-type {
   padding: 0.25rem 0.75rem;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
-  background: #edf2f7;
-  color: #4a5568;
+  background: #f3f4f6;
+  color: #6b7280;
 }
 
 .comm-type.email_sent {
@@ -316,9 +331,9 @@
 
 .interest-badge {
   padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .interest-badge.level-A {
@@ -347,33 +362,34 @@
   border: none;
   color: #ef4444;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.25rem;
 }
 
 .comm-coach {
-  font-size: 0.875rem;
-  color: #667eea;
+  font-size: 0.8125rem;
+  color: #2563eb;
   margin: 0.25rem 0;
 }
 
 .comm-subject {
-  font-weight: 600;
-  color: #2d3748;
+  font-weight: 500;
+  color: #111827;
   margin: 0.25rem 0;
+  font-size: 0.9375rem;
 }
 
 .comm-notes {
-  font-size: 0.875rem;
-  color: #718096;
+  font-size: 0.8125rem;
+  color: #6b7280;
   margin-top: 0.5rem;
 }
 
 .no-selection {
   text-align: center;
   padding: 4rem 2rem;
-  color: #718096;
-  font-size: 1.2rem;
+  color: #6b7280;
+  font-size: 1.125rem;
 }
 
 @media (max-width: 768px) {
@@ -388,5 +404,8 @@
   .coaches-list {
     grid-template-columns: 1fr;
   }
+  
+  .tracker-container {
+    padding: 1rem;
+  }
 }
-

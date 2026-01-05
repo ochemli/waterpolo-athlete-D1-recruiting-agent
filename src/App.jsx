@@ -83,9 +83,8 @@ function App() {
     <div className="app">
       <div className="container">
         <div className="header">
-          <div className="header-icon">🤽‍♀️</div>
-          <h1>Recruiting Coach AI</h1>
-          <p className="subtitle">Draft emails + analyze coach replies. Blunt, clean, D1-focused.</p>
+          <h1>Recruiting Communications Platform</h1>
+          <p className="subtitle">NCAA D1 Water Polo Recruiting Management</p>
           
           <div className="nav-tabs">
             <button 
@@ -251,10 +250,7 @@ function App() {
                 Generating...
               </>
             ) : (
-              <>
-                <span>✨</span>
-                Generate
-              </>
+              'Generate'
             )}
           </button>
         </form>

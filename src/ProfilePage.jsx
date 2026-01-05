@@ -68,7 +68,7 @@ function ProfilePage() {
   return (
     <div className="profile-page">
       <div className="profile-header">
-        <h1>🤽‍♀️ Athlete Profile & Updates</h1>
+        <h1>Athlete Profile & Updates</h1>
         <p className="subtitle">Build your personalized knowledge base</p>
       </div>
 

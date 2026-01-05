@@ -25,13 +25,13 @@ function KnowledgeBase() {
   return (
     <div className="kb-page">
       <div className="kb-header">
-        <h1>📚 Knowledge Base</h1>
-        <p className="subtitle">Everything the AI agent knows about you</p>
+        <h1>Knowledge Base</h1>
+        <p className="subtitle">System data and custom instructions</p>
       </div>
 
       <div className="kb-container">
         <div className="kb-section">
-          <h2>🤽‍♀️ Athlete Profile</h2>
+          <h2>Athlete Profile</h2>
           {profile ? (
             <div className="kb-content">
               <div className="kb-item">
@@ -74,7 +74,7 @@ function KnowledgeBase() {
         </div>
 
         <div className="kb-section">
-          <h2>🎓 Target Universities ({universitiesData.length})</h2>
+          <h2>Target Universities ({universitiesData.length})</h2>
           <div className="uni-list">
             {universitiesData.map(uni => (
               <div key={uni.id} className="uni-item">
@@ -87,7 +87,7 @@ function KnowledgeBase() {
         </div>
 
         <div className="kb-section">
-          <h2>⚙️ Custom Instructions for AI</h2>
+          <h2>Custom Instructions</h2>
           <p className="section-desc">
             Add specific instructions for how the AI should communicate on your behalf.
             These will be used for ALL generated emails and analyses.
@@ -108,7 +108,7 @@ function KnowledgeBase() {
         </div>
 
         <div className="kb-section">
-          <h2>📊 What the AI Knows</h2>
+          <h2>System Summary</h2>
           <div className="data-summary">
             <div className="summary-item">
               <span className="summary-number">{universitiesData.length}</span>
