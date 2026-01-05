@@ -67,11 +67,6 @@ function ProfilePage() {
 
   return (
     <div className="profile-page">
-      <div className="profile-header">
-        <h1>Athlete Profile & Updates</h1>
-        <p className="subtitle">Build your personalized knowledge base</p>
-      </div>
-
       <div className="profile-container">
         <div className="scan-section">
           <h2>Profile Scanner</h2>

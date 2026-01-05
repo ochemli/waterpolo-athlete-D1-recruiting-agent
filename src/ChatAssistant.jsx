@@ -96,11 +96,6 @@ Be conversational, helpful, and concise. If they ask to draft an email, use the 
 
   return (
     <div className="chat-page">
-      <div className="chat-header">
-        <h1>Chat Assistant</h1>
-        <p className="subtitle">Ask questions, get advice, or manage your recruiting data</p>
-      </div>
-
       <div className="chat-container">
         <div className="chat-messages">
           {messages.map((msg, idx) => (

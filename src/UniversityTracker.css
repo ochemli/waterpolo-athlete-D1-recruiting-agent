@@ -1,26 +1,7 @@
 .tracker-page {
   width: 100%;
   min-height: 100vh;
-  background: white;
-}
-
-.tracker-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1.5rem 2rem;
-  margin-bottom: 0;
-}
-
-.tracker-header h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  color: #6b7280;
-  font-size: 0.875rem;
+  background: #f9fafb;
 }
 
 .tracker-container {

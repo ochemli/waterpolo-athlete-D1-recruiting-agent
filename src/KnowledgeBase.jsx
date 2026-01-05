@@ -24,11 +24,6 @@ function KnowledgeBase() {
 
   return (
     <div className="kb-page">
-      <div className="kb-header">
-        <h1>Knowledge Base</h1>
-        <p className="subtitle">System data and custom instructions</p>
-      </div>
-
       <div className="kb-container">
         <div className="kb-section">
           <h2>Athlete Profile</h2>

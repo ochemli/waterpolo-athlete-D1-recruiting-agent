@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import Navigation from './Navigation'
 import ProfilePage from './ProfilePage'
 import UniversityTracker from './UniversityTracker'
 import KnowledgeBase from './KnowledgeBase'
 import ChatAssistant from './ChatAssistant'
+import VideoAnalysis from './VideoAnalysis'
 import universitiesData from './universities-data.json'
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('main')
+  const [currentPage, setCurrentPage] = useState('chat')
   const [formData, setFormData] = useState({
     athleteName: '',
     gradYear: '',
@@ -68,62 +70,18 @@ function App() {
   const isUpdateEmail = formData.mode === 'update_email'
   const isYourStyle = formData.mode === 'your_style'
 
-  if (currentPage === 'profile') {
-    return <ProfilePage />
-  }
-
-  if (currentPage === 'tracker') {
-    return <UniversityTracker />
-  }
-
-  if (currentPage === 'knowledge') {
-    return <KnowledgeBase />
-  }
-
-  if (currentPage === 'chat') {
-    return <ChatAssistant />
-  }
-
   return (
     <div className="app">
-      <div className="container">
-        <div className="header">
-          <h1>Recruiting Communications Platform</h1>
-          <p className="subtitle">NCAA D1 Water Polo Recruiting Management</p>
-          
-          <div className="nav-tabs">
-            <button 
-              className={currentPage === 'chat' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('chat')}
-            >
-              Chat
-            </button>
-            <button 
-              className={currentPage === 'main' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('main')}
-            >
-              Generate
-            </button>
-            <button 
-              className={currentPage === 'tracker' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('tracker')}
-            >
-              Universities
-            </button>
-            <button 
-              className={currentPage === 'profile' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('profile')}
-            >
-              Profile
-            </button>
-            <button 
-              className={currentPage === 'knowledge' ? 'tab active' : 'tab'}
-              onClick={() => setCurrentPage('knowledge')}
-            >
-              Knowledge Base
-            </button>
-          </div>
-        </div>
+      <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
+      
+      {currentPage === 'profile' && <ProfilePage />}
+      {currentPage === 'tracker' && <UniversityTracker />}
+      {currentPage === 'knowledge' && <KnowledgeBase />}
+      {currentPage === 'chat' && <ChatAssistant />}
+      {currentPage === 'video' && <VideoAnalysis />}
+      
+      {currentPage === 'main' && (
+        <div className="container">
 
         <form onSubmit={handleSubmit} className="form">
           <div className="grid">
@@ -272,7 +230,7 @@ function App() {
             {output}
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

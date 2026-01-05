@@ -53,6 +53,7 @@ You must do ONLY what the user selected in "mode":
 - analyze_reply: classify the coach reply into A/B/C/D/E and give next action.
 - your_style: draft an email in the athlete's PERSONAL writing style (use their voice, tone, and personality).
 - chat: conversational assistant mode - answer questions, give advice, help manage data.
+- video_analysis: analyze goalie performance from game footage descriptions.
 
 Email constraints:
 - Default 120–180 words unless length specifies short/long.
@@ -100,6 +101,31 @@ ${profileContext}${styleInstructions}${customInstructionsText}
         { role: "system", content: input.systemContext || system },
         ...chatHistory.slice(-10), // Keep last 10 messages for context
         { role: "user", content: input.userMessage }
+      ];
+    } else if (input.mode === 'video_analysis') {
+      // Handle video analysis
+      const videoPrompt = `Analyze this goalie performance:
+
+Title: ${input.videoInfo.title}
+Duration: ${input.videoInfo.duration || 'N/A'}
+Opponent: ${input.videoInfo.opponent || 'N/A'}
+Date: ${input.videoInfo.date || 'N/A'}
+
+Performance Details:
+${input.videoInfo.notes}
+
+Analysis Type: ${input.analysisType}
+
+Provide detailed ${input.analysisType === 'full' ? 'analysis including strengths and areas to improve' : 
+input.analysisType === 'strengths' ? 'analysis of strengths only' :
+input.analysisType === 'improvement' ? 'analysis of areas to improve with specific drills' :
+'advice on which clips to include in recruiting highlight reels'}.
+
+Format the response clearly with headers. Be specific and actionable.`;
+
+      messages = [
+        { role: "system", content: `You are an expert water polo goalie coach analyzing performance. Provide detailed, technical analysis focused on NCAA D1 recruiting standards. Be specific about positioning, reflexes, communication, decision-making, and game awareness.` },
+        { role: "user", content: videoPrompt }
       ];
     } else {
       // Regular form-based modes
