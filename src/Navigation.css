@@ -53,9 +53,10 @@
 }
 
 .tab.active {
-  color: #2563eb;
-  border-bottom-color: #2563eb;
+  color: #111827;
+  border-bottom-color: #111827;
   background: transparent;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

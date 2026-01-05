@@ -44,9 +44,14 @@
   font-size: 0.875rem;
 }
 
-.scan-btn {
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.scan-btn,
+.load-sample-btn {
   padding: 0.625rem 1.25rem;
-  background: #10b981;
   color: white;
   border: none;
   border-radius: 6px;
@@ -56,8 +61,20 @@
   transition: all 0.15s ease;
 }
 
+.scan-btn {
+  background: #10b981;
+}
+
+.load-sample-btn {
+  background: #2563eb;
+}
+
 .scan-btn:hover:not(:disabled) {
   background: #059669;
+}
+
+.load-sample-btn:hover {
+  background: #1d4ed8;
 }
 
 .scan-btn:disabled {
@@ -129,6 +146,92 @@
   font-size: 0.75rem;
   color: #6b7280;
   margin-top: 0.5rem;
+}
+
+.section-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.custom-instructions-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+
+.custom-instructions-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.save-instructions-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 0.75rem;
+}
+
+.save-instructions-btn:hover {
+  background: #1d4ed8;
+}
+
+.knowledge-section {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.knowledge-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.knowledge-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.knowledge-item h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.knowledge-item p {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
+.knowledge-item strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.no-data {
+  color: #9ca3af;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
 }
 
 .save-notice {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import profileDataSample from '../yasmine-profile-data.json'
 import './ProfilePage.css'
 
 function ProfilePage() {
@@ -6,6 +7,7 @@ function ProfilePage() {
     athleteName: 'Yasmine Sowka',
     profileUrl: 'https://sites.google.com/view/yasmine-sowka-water-polo',
     achievements: '',
+    strengths: '',
     writingStyle: '',
     recentHighlights: '',
     coachReplies: '',
@@ -13,6 +15,7 @@ function ProfilePage() {
     videoLinks: ''
   })
   
+  const [customInstructions, setCustomInstructions] = useState('')
   const [scanning, setScanning] = useState(false)
   const [lastScanned, setLastScanned] = useState(null)
 
@@ -26,12 +29,29 @@ function ProfilePage() {
     if (lastScan) {
       setLastScanned(new Date(lastScan))
     }
+    // Load custom instructions
+    const savedInstructions = localStorage.getItem('customInstructions')
+    if (savedInstructions) {
+      setCustomInstructions(savedInstructions)
+    }
   }, [])
 
   const handleChange = (e) => {
     const updated = { ...profile, [e.target.name]: e.target.value }
     setProfile(updated)
     localStorage.setItem('athleteProfile', JSON.stringify(updated))
+  }
+
+  const loadSampleData = () => {
+    const updated = { ...profile, ...profileDataSample }
+    setProfile(updated)
+    localStorage.setItem('athleteProfile', JSON.stringify(updated))
+    alert('Sample data loaded successfully!')
+  }
+
+  const saveCustomInstructions = () => {
+    localStorage.setItem('customInstructions', customInstructions)
+    alert('Instructions saved! The AI will use these when generating emails.')
   }
 
   const scanProfile = async () => {
@@ -78,13 +98,21 @@ function ProfilePage() {
               onChange={handleChange}
               placeholder="https://sites.google.com/view/..."
             />
-            <button 
-              onClick={scanProfile} 
-              disabled={scanning}
-              className="scan-btn"
-            >
-              {scanning ? '🔄 Scanning...' : '🔍 Scan for Updates'}
-            </button>
+            <div className="button-group">
+              <button 
+                onClick={scanProfile} 
+                disabled={scanning}
+                className="scan-btn"
+              >
+                {scanning ? '🔄 Scanning...' : '🔍 Scan for Updates'}
+              </button>
+              <button 
+                onClick={loadSampleData} 
+                className="load-sample-btn"
+              >
+                📋 Load Sample Data
+              </button>
+            </div>
             {lastScanned && (
               <p className="last-scanned">
                 Last scanned: {lastScanned.toLocaleDateString()} at {lastScanned.toLocaleTimeString()}
@@ -116,6 +144,18 @@ function ProfilePage() {
               rows="4"
             />
             <span className="hint">Awards, records, tournament results, statistics</span>
+          </div>
+
+          <div className="form-group">
+            <label>Strengths & Elite Competencies</label>
+            <textarea
+              name="strengths"
+              value={profile.strengths}
+              onChange={handleChange}
+              placeholder="Technical skills, physical advantages, behavioral traits..."
+              rows="8"
+            />
+            <span className="hint">Detailed analysis of what makes you stand out as a recruit</span>
           </div>
 
           <div className="form-group">
@@ -181,6 +221,82 @@ function ProfilePage() {
               rows="6"
             />
             <span className="hint">Keep a log of coach responses for context and tracking</span>
+          </div>
+        </div>
+
+        <div className="profile-section">
+          <h2>🤖 Teach the AI About You</h2>
+          <p className="section-description">
+            Add specific guidance to help the AI understand your unique situation, interests, and communication preferences. 
+            This helps personalize all generated emails and responses.
+          </p>
+          
+          <div className="form-group">
+            <label>Custom Instructions for AI</label>
+            <textarea
+              value={customInstructions}
+              onChange={(e) => setCustomInstructions(e.target.value)}
+              placeholder="Example: Focus on my interest in biotech and environmental engineering. Mention my Canadian national team experience. Keep emails under 150 words. I prefer a direct, professional tone."
+              rows="5"
+              className="custom-instructions-input"
+            />
+          </div>
+          <button onClick={saveCustomInstructions} className="save-instructions-btn">
+            Save Instructions
+          </button>
+        </div>
+
+        <div className="profile-section knowledge-section">
+          <h2>🧠 What the AI Knows About You</h2>
+          <p className="section-description">
+            This is all the information the AI uses when helping with recruiting communications:
+          </p>
+          
+          <div className="knowledge-display">
+            <div className="knowledge-item">
+              <h4>Basic Info</h4>
+              <p><strong>Name:</strong> {profile.athleteName || 'Not set'}</p>
+              <p><strong>Profile URL:</strong> {profile.profileUrl || 'Not set'}</p>
+            </div>
+
+            {profile.achievements && (
+              <div className="knowledge-item">
+                <h4>Achievements</h4>
+                <p>{profile.achievements}</p>
+              </div>
+            )}
+
+            {profile.strengths && (
+              <div className="knowledge-item">
+                <h4>Strengths</h4>
+                <p>{profile.strengths.substring(0, 300)}...</p>
+              </div>
+            )}
+
+            {profile.recentHighlights && (
+              <div className="knowledge-item">
+                <h4>Recent Highlights</h4>
+                <p>{profile.recentHighlights}</p>
+              </div>
+            )}
+
+            {profile.upcomingEvents && (
+              <div className="knowledge-item">
+                <h4>Upcoming Events</h4>
+                <p>{profile.upcomingEvents}</p>
+              </div>
+            )}
+
+            {customInstructions && (
+              <div className="knowledge-item">
+                <h4>Custom Instructions</h4>
+                <p>{customInstructions}</p>
+              </div>
+            )}
+
+            {!profile.achievements && !profile.strengths && !profile.recentHighlights && (
+              <p className="no-data">No data yet. Fill out the sections above or click "Load Sample Data" to get started.</p>
+            )}
           </div>
         </div>
 

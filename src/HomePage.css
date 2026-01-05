@@ -1,0 +1,179 @@
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #d1d5db;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.profile-subtitle {
+  font-size: 1.25rem;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.profile-club {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.profile-summary {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.summary-section {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.summary-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+.summary-content p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.summary-content p:last-child {
+  margin-bottom: 0;
+}
+
+.summary-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.summary-content a {
+  color: #111827;
+  text-decoration: underline;
+}
+
+.summary-content a:hover {
+  color: #000000;
+}
+
+.achievements-list,
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li,
+.events-list li {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.achievements-list li:last-child,
+.events-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.profile-link-section {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.profile-link-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.profile-link-section p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-profile-link {
+  display: inline-block;
+  background: #111827;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid #111827;
+}
+
+.view-profile-link:hover {
+  background: #000000;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .summary-section {
+    padding: 1.5rem;
+  }
+
+  .profile-link-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .view-profile-link {
+    display: block;
+    width: 100%;
+  }
+}
+

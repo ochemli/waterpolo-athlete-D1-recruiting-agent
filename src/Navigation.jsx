@@ -5,28 +5,28 @@ function Navigation({ currentPage, onPageChange }) {
     <div className="app-header">
       <div className="header-content">
         <div className="brand">
-          <h1>Recruiting Communications Platform</h1>
-          <p className="subtitle">NCAA D1 Water Polo Recruiting Management</p>
+          <h1>Water Polo Recruiting Assistant</h1>
+          <p className="subtitle">Your AI-Powered Helper for D1 College Recruiting</p>
         </div>
         
         <nav className="nav-tabs">
           <button 
+            className={currentPage === 'home' ? 'tab active' : 'tab'}
+            onClick={() => onPageChange('home')}
+          >
+            Home
+          </button>
+          <button 
             className={currentPage === 'chat' ? 'tab active' : 'tab'}
             onClick={() => onPageChange('chat')}
           >
-            Chat
-          </button>
-          <button 
-            className={currentPage === 'video' ? 'tab active' : 'tab'}
-            onClick={() => onPageChange('video')}
-          >
-            Video Analysis
+            Chat Assistant
           </button>
           <button 
             className={currentPage === 'main' ? 'tab active' : 'tab'}
             onClick={() => onPageChange('main')}
           >
-            Generate
+            Email Coaches
           </button>
           <button 
             className={currentPage === 'tracker' ? 'tab active' : 'tab'}
@@ -35,16 +35,16 @@ function Navigation({ currentPage, onPageChange }) {
             Universities
           </button>
           <button 
-            className={currentPage === 'profile' ? 'tab active' : 'tab'}
-            onClick={() => onPageChange('profile')}
+            className={currentPage === 'reels' ? 'tab active' : 'tab'}
+            onClick={() => onPageChange('reels')}
           >
-            Profile
+            Video Analysis
           </button>
           <button 
-            className={currentPage === 'knowledge' ? 'tab active' : 'tab'}
-            onClick={() => onPageChange('knowledge')}
+            className={currentPage === 'progress' ? 'tab active' : 'tab'}
+            onClick={() => onPageChange('progress')}
           >
-            Knowledge
+            🔒 Recruitment Progress
           </button>
         </nav>
       </div>

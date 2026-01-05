@@ -1,0 +1,115 @@
+.app-footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 3rem 2rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 4px solid #2563eb;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.footer-section p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.contact-name {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-title {
+  color: #60a5fa;
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.contact-email a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #374151;
+  color: #9ca3af;
+  font-size: 0.8125rem;
+  font-style: italic;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid #374151;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0.25rem 0;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: #6b7280;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .app-footer {
+    padding: 2rem 1rem 1rem;
+    margin-top: 2rem;
+  }
+}
+

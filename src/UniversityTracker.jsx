@@ -4,7 +4,10 @@ import './UniversityTracker.css'
 
 function UniversityTracker() {
   const [selectedUniversity, setSelectedUniversity] = useState(null)
+  const [expandedCard, setExpandedCard] = useState(null)
   const [communications, setCommunications] = useState({})
+  const [regionFilter, setRegionFilter] = useState('all')
+  const [academicFilter, setAcademicFilter] = useState('all')
   const [newComm, setNewComm] = useState({
     date: new Date().toISOString().split('T')[0],
     type: 'email_sent',
@@ -59,30 +62,216 @@ function UniversityTracker() {
     localStorage.setItem('universityCommunications', JSON.stringify(updated))
   }
 
+  const toggleCard = (uniId) => {
+    setExpandedCard(expandedCard === uniId ? null : uniId)
+  }
+
   const uniComms = selectedUniversity ? (communications[selectedUniversity.id] || []) : []
   const sortedComms = [...uniComms].sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  // Region definitions
+  const eastStates = ['MA', 'NY', 'NJ', 'PA', 'RI', 'DC', 'MD', 'CT']
+  const californiaStates = ['California']
+
+  // Filter universities
+  const filterUniversities = (universities) => {
+    return universities.filter(uni => {
+      // Region filter
+      const matchesRegion = regionFilter === 'all' || 
+        (regionFilter === 'east' && eastStates.includes(uni.state)) ||
+        (regionFilter === 'california' && californiaStates.includes(uni.state))
+
+      // Academic filter
+      const matchesAcademic = academicFilter === 'all' ||
+        (uni.academicStrengths && uni.academicStrengths.some(strength => 
+          strength.toLowerCase().includes(academicFilter.toLowerCase())
+        ))
+
+      return matchesRegion && matchesAcademic
+    })
+  }
+
+  const contactedUniversities = filterUniversities(universitiesData.filter(u => u.contacted !== false))
+  const nonContactedUniversities = filterUniversities(universitiesData.filter(u => u.contacted === false))
 
   return (
     <div className="tracker-page">
       <div className="tracker-container">
+        
+        <div className="filters-section">
+          <div className="filter-group">
+            <h3>Region</h3>
+            <div className="filter-buttons">
+              <button
+                className={`filter-btn ${regionFilter === 'all' ? 'active' : ''}`}
+                onClick={() => setRegionFilter('all')}
+              >
+                All
+              </button>
+              <button
+                className={`filter-btn ${regionFilter === 'east' ? 'active' : ''}`}
+                onClick={() => setRegionFilter('east')}
+              >
+                East Coast
+              </button>
+              <button
+                className={`filter-btn ${regionFilter === 'california' ? 'active' : ''}`}
+                onClick={() => setRegionFilter('california')}
+              >
+                California
+              </button>
+            </div>
+          </div>
+
+          <div className="filter-group">
+            <h3>Academic Focus</h3>
+            <div className="filter-buttons">
+              <button
+                className={`filter-btn ${academicFilter === 'all' ? 'active' : ''}`}
+                onClick={() => setAcademicFilter('all')}
+              >
+                All
+              </button>
+              <button
+                className={`filter-btn ${academicFilter === 'stem' ? 'active' : ''}`}
+                onClick={() => setAcademicFilter('stem')}
+              >
+                STEM
+              </button>
+              <button
+                className={`filter-btn ${academicFilter === 'engineering' ? 'active' : ''}`}
+                onClick={() => setAcademicFilter('engineering')}
+              >
+                Engineering
+              </button>
+              <button
+                className={`filter-btn ${academicFilter === 'biotech' ? 'active' : ''}`}
+                onClick={() => setAcademicFilter('biotech')}
+              >
+                Biotech
+              </button>
+              <button
+                className={`filter-btn ${academicFilter === 'environmental' ? 'active' : ''}`}
+                onClick={() => setAcademicFilter('environmental')}
+              >
+                Environmental
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="university-selector">
-          <h2>Select University</h2>
+          <h2>Target Universities ({contactedUniversities.length})</h2>
           <div className="uni-grid">
-            {universitiesData.map(uni => {
+            {contactedUniversities.map(uni => {
               const commCount = (communications[uni.id] || []).length
               const isActive = selectedUniversity?.id === uni.id
+              const isExpanded = expandedCard === uni.id
               
               return (
                 <div
                   key={uni.id}
-                  className={`uni-card ${isActive ? 'active' : ''}`}
-                  onClick={() => setSelectedUniversity(uni)}
+                  className={`uni-card ${isActive ? 'active' : ''} ${isExpanded ? 'expanded' : ''}`}
                 >
-                  <h3>{uni.name}</h3>
-                  <span className="uni-state">{uni.state}</span>
-                  {uni.conference && <span className="uni-conference">{uni.conference}</span>}
-                  {commCount > 0 && (
-                    <span className="comm-badge">{commCount} interactions</span>
+                  <div className="card-header" onClick={() => setSelectedUniversity(uni)}>
+                    <h3>{uni.name}</h3>
+                    <p className="uni-meta">
+                      {uni.coaches && uni.coaches.length > 0 && (
+                        <span>{uni.coaches.length} coach{uni.coaches.length !== 1 ? 'es' : ''}</span>
+                      )}
+                      {uni.coaches && uni.coaches.length > 0 && uni.state && <span> | </span>}
+                      {uni.state && <span>{uni.state}</span>}
+                    </p>
+                    {uni.notes && (
+                      <p className="uni-notes">{uni.notes}</p>
+                    )}
+                    {uni.conference && <span className="uni-conference">{uni.conference}</span>}
+                    {uni.academicStrengths && uni.academicStrengths.length > 0 && (
+                      <div className="academic-tags">
+                        {uni.academicStrengths.map(strength => (
+                          <span key={strength} className="academic-tag">{strength}</span>
+                        ))}
+                      </div>
+                    )}
+                    {commCount > 0 && (
+                      <span className="comm-badge">{commCount} interactions</span>
+                    )}
+                  </div>
+                  <button 
+                    className="expand-btn" 
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleCard(uni.id)
+                    }}
+                  >
+                    {isExpanded ? '▲ Hide Details' : '▼ Show Details'}
+                  </button>
+                  {isExpanded && (
+                    <div className="card-details">
+                      {uni.address && <p className="uni-address">📍 {uni.address}</p>}
+                      {uni.coaches && uni.coaches.length > 0 && (
+                        <div className="coaches-list">
+                          <h4>Coaches:</h4>
+                          {uni.coaches.map((coach, idx) => (
+                            <div key={idx} className="coach-info">
+                              <strong>{coach.name}</strong> - {coach.position}
+                              {coach.email && <div>✉️ {coach.email}</div>}
+                              {coach.phone && <div>📞 {coach.phone}</div>}
+                              {coach.notes && <div className="coach-notes">{coach.notes}</div>}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="university-selector">
+          <h2>Other D1 Programs ({nonContactedUniversities.length})</h2>
+          <div className="uni-grid">
+            {nonContactedUniversities.map(uni => {
+              const isExpanded = expandedCard === uni.id
+              
+              return (
+                <div
+                  key={uni.id}
+                  className={`uni-card non-contacted ${isExpanded ? 'expanded' : ''}`}
+                >
+                  <div className="card-header">
+                    <h3>{uni.name}</h3>
+                    <p className="uni-meta">
+                      {uni.coaches && uni.coaches.length > 0 && (
+                        <span>{uni.coaches.length} coach{uni.coaches.length !== 1 ? 'es' : ''}</span>
+                      )}
+                      {uni.coaches && uni.coaches.length > 0 && uni.state && <span> | </span>}
+                      {uni.state && <span>{uni.state}</span>}
+                    </p>
+                    {uni.notes && (
+                      <p className="uni-notes">{uni.notes}</p>
+                    )}
+                    {uni.academicStrengths && uni.academicStrengths.length > 0 && (
+                      <div className="academic-tags">
+                        {uni.academicStrengths.map(strength => (
+                          <span key={strength} className="academic-tag">{strength}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <button 
+                    className="expand-btn" 
+                    onClick={() => toggleCard(uni.id)}
+                  >
+                    {isExpanded ? '▲ Hide Details' : '▼ Show Details'}
+                  </button>
+                  {isExpanded && uni.address && (
+                    <div className="card-details">
+                      <p className="uni-address">📍 {uni.address}</p>
+                      {uni.notes && <p>{uni.notes}</p>}
+                    </div>
                   )}
                 </div>
               )

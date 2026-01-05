@@ -7,6 +7,7 @@
     "website": "https://mgoblue.com/sports/womens-water-polo",
     "address": "1000 S State St, Ann Arbor MI 48109",
     "notes": "Big-Ten power; athletic + academic aid; strong STEM",
+    "academicStrengths": ["STEM", "Engineering"],
     "coaches": [
       {
         "name": "Cassie Churnside",
@@ -32,6 +33,7 @@
     "address": "1001 E 17th St, Bloomington IN 47408",
     "phone": "(812) 855-8431",
     "notes": "Top-20; partial scholarships; great for health sciences",
+    "academicStrengths": ["Health Sciences", "STEM"],
     "coaches": [
       {
         "name": "Taylor McInerney",
@@ -58,6 +60,7 @@
     "address": "65 N Harvard St, Boston MA 02163",
     "phone": "(617) 496-1875",
     "notes": "Ivy: need-based aid only; GPA/test scores key",
+    "academicStrengths": ["STEM", "Engineering", "Environmental"],
     "coaches": [
       {
         "name": "Ted Minnis",
@@ -92,6 +95,7 @@
     "website": "https://uclabruins.com/sports/womens-water-polo",
     "address": "2131 John Wooden Ctr, Los Angeles CA 90095",
     "notes": "NCAA champ; scholarship slots very competitive",
+    "academicStrengths": ["STEM", "Engineering"],
     "distanceSF": 612,
     "distanceOC": 64,
     "coaches": [
@@ -133,6 +137,7 @@
     "website": "https://goprincetontigers.com/sports/womens-water-polo",
     "address": "Princeton University, Princeton NJ 08544",
     "notes": "Ivy; need-based aid; strong engineering",
+    "academicStrengths": ["Engineering", "STEM"],
     "coaches": [
       {
         "name": "Derek Ellingson",
@@ -269,6 +274,7 @@
     "website": "https://calbears.com/sports/womens-water-polo",
     "address": "2301 Bancroft Way, Berkeley CA 94720",
     "notes": "Top-5; STEM powerhouse; roster highly competitive",
+    "academicStrengths": ["STEM", "Engineering", "Environmental"],
     "distanceSF": 24,
     "distanceOC": 660,
     "coaches": [
@@ -303,6 +309,7 @@
     "website": "https://ucdavisaggies.com/sports/womens-water-polo",
     "address": "1 Shields Ave, Davis CA 95616",
     "notes": "Big West; replied—positive sign",
+    "academicStrengths": ["Environmental", "STEM", "Biotech"],
     "distanceSF": 121,
     "distanceOC": 692,
     "coaches": [
@@ -330,6 +337,7 @@
     "address": "680 California Ave, Irvine CA 92697",
     "phone": "(949) 824-5778",
     "notes": "Top-10; partial aid; strong biomechanics lab",
+    "academicStrengths": ["Biotech", "Engineering", "STEM"],
     "distanceSF": 676,
     "distanceOC": 0,
     "coaches": [
@@ -439,6 +447,7 @@
     "website": "https://gostanford.com/sports/womens-water-polo",
     "address": "235 Sam McDonald Mall, Stanford CA 94305",
     "notes": "Top-3; almost all recruits senior-team calibre",
+    "academicStrengths": ["STEM", "Engineering", "Biotech"],
     "distanceSF": 56,
     "distanceOC": 595,
     "coaches": [
@@ -474,6 +483,7 @@
     "address": "235 Hope St, Providence RI 02906",
     "phone": "401-863-9042",
     "notes": "Ivy; need-based aid; roster impact possible",
+    "academicStrengths": ["Environmental", "STEM"],
     "coaches": [
       {
         "name": "Félix Mercado",
@@ -498,6 +508,110 @@
         "notes": "Former Euro goalie—give technique feedback"
       }
     ]
+  },
+  {
+    "id": "usc",
+    "name": "USC",
+    "state": "California",
+    "website": "https://usctrojans.com/sports/womens-water-polo",
+    "address": "Los Angeles, CA",
+    "notes": "Elite program; NCAA powerhouse",
+    "academicStrengths": ["STEM", "Engineering"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "sandiego",
+    "name": "UC San Diego",
+    "state": "California",
+    "website": "https://ucsdtritons.com/sports/womens-water-polo",
+    "address": "9500 Gilman Drive, La Jolla, CA 92093",
+    "notes": "Rising program; strong biotech/STEM; near-perfect location",
+    "academicStrengths": ["STEM", "Biotech", "Engineering"],
+    "coaches": [
+      {
+        "name": "Brad Schumacher",
+        "position": "Head Coach",
+        "email": "bschumacher@ucsd.edu",
+        "profileLink": "https://ucsdtritons.com/sports/womens-water-polo",
+        "notes": "Building competitive D1 program"
+      }
+    ]
+  },
+  {
+    "id": "sjsu",
+    "name": "San Jose State",
+    "state": "California",
+    "website": "https://sjsuspartans.com/sports/womens-water-polo",
+    "address": "San Jose, CA",
+    "notes": "Silicon Valley location",
+    "academicStrengths": ["STEM", "Engineering"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "pacific",
+    "name": "Pacific",
+    "state": "California",
+    "website": "https://pacifictigers.com/sports/womens-water-polo",
+    "address": "Stockton, CA",
+    "notes": "Strong academic programs",
+    "academicStrengths": ["STEM"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "sdsu",
+    "name": "San Diego State",
+    "state": "California",
+    "website": "https://goaztecs.com/sports/womens-water-polo",
+    "address": "San Diego, CA",
+    "notes": "Growing program",
+    "academicStrengths": ["STEM"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "gwu",
+    "name": "George Washington",
+    "state": "DC",
+    "website": "https://gwsports.com/sports/womens-water-polo",
+    "address": "Washington, DC",
+    "notes": "Strong academics in capital",
+    "academicStrengths": ["STEM", "Environmental"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "bucknell",
+    "name": "Bucknell",
+    "state": "PA",
+    "website": "https://bucknellbison.com/sports/womens-water-polo",
+    "address": "Lewisburg, PA",
+    "notes": "Small liberal arts with D1 athletics",
+    "academicStrengths": ["STEM", "Engineering"],
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "fordham",
+    "name": "Fordham",
+    "state": "NY",
+    "website": "https://fordhamsports.com/sports/womens-water-polo",
+    "address": "Bronx, NY",
+    "notes": "NYC location",
+    "contacted": false,
+    "coaches": []
+  },
+  {
+    "id": "siena",
+    "name": "Siena",
+    "state": "NY",
+    "website": "https://sienasaints.com/sports/womens-water-polo",
+    "address": "Loudonville, NY",
+    "notes": "MAAC conference",
+    "contacted": false,
+    "coaches": []
   }
 ]
 

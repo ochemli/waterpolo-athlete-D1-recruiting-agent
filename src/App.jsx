@@ -1,18 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
-import ProfilePage from './ProfilePage'
+import Footer from './Footer'
+import HomePage from './HomePage'
 import UniversityTracker from './UniversityTracker'
-import KnowledgeBase from './KnowledgeBase'
 import ChatAssistant from './ChatAssistant'
-import VideoAnalysis from './VideoAnalysis'
+import VideoReels from './VideoReels'
+import RecruitmentProgress from './RecruitmentProgress'
 import universitiesData from './universities-data.json'
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('chat')
+  const [currentPage, setCurrentPage] = useState('home')
   const [formData, setFormData] = useState({
-    athleteName: '',
-    gradYear: '',
+    athleteName: 'Yasmine Sowka',
+    gradYear: '2027',
     position: 'Goalie',
     school: '',
     mode: 'draft_email',
@@ -74,14 +75,45 @@ function App() {
     <div className="app">
       <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
       
-      {currentPage === 'profile' && <ProfilePage />}
+      {currentPage === 'home' && <HomePage />}
+      {currentPage === 'progress' && <RecruitmentProgress />}
       {currentPage === 'tracker' && <UniversityTracker />}
-      {currentPage === 'knowledge' && <KnowledgeBase />}
       {currentPage === 'chat' && <ChatAssistant />}
-      {currentPage === 'video' && <VideoAnalysis />}
+      {currentPage === 'reels' && <VideoReels />}
       
       {currentPage === 'main' && (
         <div className="container">
+          
+          <div className="mode-buttons">
+            <button
+              type="button"
+              className={`mode-btn ${formData.mode === 'draft_email' ? 'active' : ''}`}
+              onClick={() => setFormData({...formData, mode: 'draft_email'})}
+            >
+              Draft Email
+            </button>
+            <button
+              type="button"
+              className={`mode-btn ${formData.mode === 'update_email' ? 'active' : ''}`}
+              onClick={() => setFormData({...formData, mode: 'update_email'})}
+            >
+              Send Update
+            </button>
+            <button
+              type="button"
+              className={`mode-btn ${formData.mode === 'analyze_reply' ? 'active' : ''}`}
+              onClick={() => setFormData({...formData, mode: 'analyze_reply'})}
+            >
+              Analyze Reply
+            </button>
+            <button
+              type="button"
+              className={`mode-btn ${formData.mode === 'your_style' ? 'active' : ''}`}
+              onClick={() => setFormData({...formData, mode: 'your_style'})}
+            >
+              Your Style
+            </button>
+          </div>
 
         <form onSubmit={handleSubmit} className="form">
           <div className="grid">
@@ -131,16 +163,6 @@ function App() {
                 <option value="other">Other (not in list)</option>
               </select>
             </div>
-          </div>
-
-          <div className="form-group">
-            <label>What do you need?</label>
-            <select name="mode" value={formData.mode} onChange={handleChange} required className="mode-select">
-              <option value="draft_email">Draft a coach email</option>
-              <option value="analyze_reply">Analyze a coach reply</option>
-              <option value="update_email">Draft an update email</option>
-              <option value="your_style">Draft in YOUR style</option>
-            </select>
           </div>
 
           {(isDraftEmail || isUpdateEmail || isYourStyle) && (
@@ -232,6 +254,8 @@ function App() {
         </div>
         </div>
       )}
+      
+      <Footer />
     </div>
   )
 }
