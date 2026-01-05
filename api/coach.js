@@ -4,6 +4,7 @@ export default async function handler(req, res) {
   try {
     const input = req.body || {};
     const profile = input.profile || {};
+    const customInstructions = input.customInstructions || '';
 
     // Build context from profile
     let profileContext = '';
@@ -32,6 +33,14 @@ The athlete has provided writing samples. Match their tone, vocabulary, and pers
 ${profile.writingStyle}
 
 Mimic their style: same level of formality, sentence structure, and energy. Make it sound like THEY wrote it.`;
+    }
+
+    // Add custom instructions
+    let customInstructionsText = '';
+    if (customInstructions) {
+      customInstructionsText = `\n\nCUSTOM INSTRUCTIONS FROM ATHLETE:
+${customInstructions}
+IMPORTANT: Follow these instructions in ALL communications.`;
     }
 
     const system = `
@@ -78,7 +87,7 @@ When analyzing a coach reply (mode: analyze_reply), you MUST return:
    - If NO: Why not (e.g., "Coach asked you to initiate," "Soft rejection," "Wait for their response")
 
 Format your analysis clearly with headers and be direct.
-${profileContext}${styleInstructions}
+${profileContext}${styleInstructions}${customInstructionsText}
 `;
 
     const user = `User request JSON:\n${JSON.stringify(input, null, 2)}`;

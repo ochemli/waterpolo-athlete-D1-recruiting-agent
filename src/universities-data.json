@@ -1,0 +1,503 @@
+[
+  {
+    "id": "michigan",
+    "name": "Michigan (Ann Arbor)",
+    "state": "MI",
+    "conference": "Big Ten",
+    "website": "https://mgoblue.com/sports/womens-water-polo",
+    "address": "1000 S State St, Ann Arbor MI 48109",
+    "notes": "Big-Ten power; athletic + academic aid; strong STEM",
+    "coaches": [
+      {
+        "name": "Cassie Churnside",
+        "position": "Head Coach",
+        "email": "churn@umich.edu",
+        "profileLink": "https://mgoblue.com/sports/womens-water-polo",
+        "notes": "Big-Ten power; athletic + academic aid; strong STEM"
+      },
+      {
+        "name": "Sami Hill",
+        "position": "Assistant Coach",
+        "email": "samihill@umich.edu",
+        "profileLink": "https://mgoblue.com/sports/womens-water-polo",
+        "notes": "Ex-US-NT goalie—good technical mentor"
+      }
+    ]
+  },
+  {
+    "id": "indiana",
+    "name": "Indiana",
+    "state": "IN",
+    "website": "https://iuhoosiers.com/sports/womens-water-polo",
+    "address": "1001 E 17th St, Bloomington IN 47408",
+    "phone": "(812) 855-8431",
+    "notes": "Top-20; partial scholarships; great for health sciences",
+    "coaches": [
+      {
+        "name": "Taylor McInerney",
+        "position": "Head Coach",
+        "email": "taymac@iu.edu",
+        "profileLink": "https://iuhoosiers.com/sports/womens-water-polo",
+        "notes": "Top-20; partial scholarships; great for health sciences"
+      },
+      {
+        "name": "Zoe Crouch",
+        "position": "Assistant Coach",
+        "email": "zjcrouch@iu.edu",
+        "profileLink": "https://iuhoosiers.com/sports/womens-water-polo",
+        "notes": "Main recruiting contact—keep her copied"
+      }
+    ]
+  },
+  {
+    "id": "harvard",
+    "name": "Harvard",
+    "state": "MA",
+    "conference": "Ivy League",
+    "website": "https://gocrimson.com/sports/womens-water-polo",
+    "address": "65 N Harvard St, Boston MA 02163",
+    "phone": "(617) 496-1875",
+    "notes": "Ivy: need-based aid only; GPA/test scores key",
+    "coaches": [
+      {
+        "name": "Ted Minnis",
+        "position": "Head Coach",
+        "email": "minnis@fas.harvard.edu",
+        "phone": "(617) 496-1875",
+        "profileLink": "https://gocrimson.com/sports/womens-water-polo",
+        "notes": "Ivy: need-based aid only; GPA/test scores key"
+      },
+      {
+        "name": "Jacob Castro",
+        "position": "Assistant Coach",
+        "email": "jcastro@fas.harvard.edu",
+        "phone": "(617) 384-6802",
+        "profileLink": "https://gocrimson.com/sports/womens-water-polo",
+        "notes": "Video liaison—send highlight links"
+      },
+      {
+        "name": "Zoe Banks",
+        "position": "Assistant Coach",
+        "email": "zoe_banks@fas.harvard.edu",
+        "phone": "(617) 384-6802",
+        "profileLink": "https://gocrimson.com/sports/womens-water-polo",
+        "notes": "Former goalie—ask for feedback"
+      }
+    ]
+  },
+  {
+    "id": "ucla",
+    "name": "UCLA",
+    "state": "California",
+    "website": "https://uclabruins.com/sports/womens-water-polo",
+    "address": "2131 John Wooden Ctr, Los Angeles CA 90095",
+    "notes": "NCAA champ; scholarship slots very competitive",
+    "distanceSF": 612,
+    "distanceOC": 64,
+    "coaches": [
+      {
+        "name": "Adam Wright",
+        "position": "Head Coach",
+        "email": "awright@athletics.ucla.edu",
+        "profileLink": "https://uclabruins.com/sports/womens-water-polo",
+        "notes": "NCAA champ; scholarship slots very competitive"
+      },
+      {
+        "name": "Jason Falitz",
+        "position": "Associate Head",
+        "email": "jfalitz@athletics.ucla.edu",
+        "profileLink": "https://uclabruins.com/sports/womens-water-polo",
+        "notes": "Handles recruiting calendar—follow up with JO stats"
+      },
+      {
+        "name": "Brooke Maxson",
+        "position": "Assistant Coach",
+        "email": "bmaxson@athletics.ucla.edu",
+        "profileLink": "https://uclabruins.com/sports/womens-water-polo",
+        "notes": "Goalie liaison—camp invites"
+      },
+      {
+        "name": "Valerie Ayala",
+        "position": "Assistant Coach",
+        "email": "vayala@athletics.ucla.edu",
+        "profileLink": "https://uclabruins.com/sports/womens-water-polo",
+        "notes": "Ask about STEM academic support"
+      }
+    ]
+  },
+  {
+    "id": "princeton",
+    "name": "Princeton",
+    "state": "NJ",
+    "conference": "Ivy League",
+    "website": "https://goprincetontigers.com/sports/womens-water-polo",
+    "address": "Princeton University, Princeton NJ 08544",
+    "notes": "Ivy; need-based aid; strong engineering",
+    "coaches": [
+      {
+        "name": "Derek Ellingson",
+        "position": "Head Coach",
+        "email": "dellings@princeton.edu",
+        "profileLink": "https://goprincetontigers.com/sports/womens-water-polo",
+        "notes": "Ivy; need-based aid; strong engineering"
+      },
+      {
+        "name": "Bella Baia",
+        "position": "Assistant Coach",
+        "email": "bellabaia@princeton.edu",
+        "profileLink": "https://goprincetontigers.com/sports/womens-water-polo",
+        "notes": "Coordinates campus visits/Zoom"
+      },
+      {
+        "name": "Huw Helman",
+        "position": "Assistant Coach",
+        "email": "hdhelman@princeton.edu",
+        "profileLink": "https://goprincetontigers.com/sports/womens-water-polo",
+        "notes": "Send updated reel"
+      }
+    ]
+  },
+  {
+    "id": "liu",
+    "name": "Long Island (LIU)",
+    "state": "NY",
+    "website": "https://www.liuathletics.com/sports/womens-water-polo",
+    "address": "1 University Plaza, Brooklyn NY 11201",
+    "notes": "Emerging D-I; often offers substantial aid",
+    "coaches": [
+      {
+        "name": "Morgan Allison",
+        "position": "Head Coach",
+        "email": "morgan.allison@liu.edu",
+        "profileLink": "https://www.liuathletics.com/sports/womens-water-polo",
+        "notes": "Emerging D-I; often offers substantial aid"
+      }
+    ]
+  },
+  {
+    "id": "wagner",
+    "name": "Wagner",
+    "state": "NY",
+    "conference": "MAAC",
+    "website": "https://wagnerathletics.com/sports/womens-polo",
+    "address": "1 Campus Rd, Staten Island NY 10301",
+    "phone": "(718) 420-4279",
+    "notes": "MAAC power; large athletic packages common",
+    "coaches": [
+      {
+        "name": "Josh Hower",
+        "position": "Head Coach",
+        "email": "josh.hower@wagner.edu",
+        "phone": "(718) 420-4279",
+        "profileLink": "https://wagnerathletics.com/sports/womens-polo",
+        "notes": "MAAC power; large athletic packages common"
+      },
+      {
+        "name": "Ashley Hower",
+        "position": "Assistant Coach",
+        "email": "ashley.hower@wagner.edu",
+        "profileLink": "https://wagnerathletics.com/sports/womens-polo",
+        "notes": "Goalie contact—mention CAN-NT status"
+      }
+    ]
+  },
+  {
+    "id": "marist",
+    "name": "Marist",
+    "state": "NY",
+    "website": "https://goredfoxes.com/sports/womens-water-polo",
+    "address": "3399 North Rd, Poughkeepsie NY 12601",
+    "notes": "Good shot at early starting role",
+    "coaches": [
+      {
+        "name": "Chris Vidale",
+        "position": "Head Coach",
+        "email": "Christopher.Vidale@marist.edu",
+        "profileLink": "https://goredfoxes.com/sports/womens-water-polo",
+        "notes": "Good shot at early starting role"
+      },
+      {
+        "name": "Heather Rancourt",
+        "position": "Assistant Coach",
+        "phone": "Ext. 2415",
+        "profileLink": "https://goredfoxes.com/sports/womens-water-polo",
+        "notes": "Email + call for visit info"
+      }
+    ]
+  },
+  {
+    "id": "csuf",
+    "name": "Cal State Fullerton",
+    "state": "California",
+    "website": "https://fullertontitans.com/sports/womens-water-polo",
+    "address": "800 N State College Blvd, Fullerton CA 92831",
+    "phone": "(657) 278-8538",
+    "notes": "Newer D-I; building roster; good scholarships",
+    "distanceSF": 660,
+    "distanceOC": 0,
+    "coaches": [
+      {
+        "name": "Kyle Witt",
+        "position": "Head Coach",
+        "email": "kwitt@fullerton.edu",
+        "phone": "(657) 278-8538",
+        "profileLink": "https://fullertontitans.com/sports/womens-water-polo",
+        "notes": "Newer D-I; building roster; good scholarships"
+      },
+      {
+        "name": "Raney Remme",
+        "position": "Assistant Coach",
+        "email": "rremme@fullerton.edu",
+        "phone": "(657) 278-2763",
+        "profileLink": "https://fullertontitans.com/sports/womens-water-polo",
+        "notes": "Handles travel-camp invites"
+      },
+      {
+        "name": "Jens Cole",
+        "position": "Assistant Coach",
+        "email": "jenscole@fullerton.edu",
+        "phone": "(657) 278-2763",
+        "profileLink": "https://fullertontitans.com/sports/womens-water-polo",
+        "notes": "Send JO qualifier stats"
+      }
+    ]
+  },
+  {
+    "id": "berkeley",
+    "name": "UC Berkeley",
+    "state": "California",
+    "website": "https://calbears.com/sports/womens-water-polo",
+    "address": "2301 Bancroft Way, Berkeley CA 94720",
+    "notes": "Top-5; STEM powerhouse; roster highly competitive",
+    "distanceSF": 24,
+    "distanceOC": 660,
+    "coaches": [
+      {
+        "name": "Coralie Simmons",
+        "position": "Head Coach",
+        "email": "coralie.simmons@berkeley.edu",
+        "profileLink": "https://calbears.com/sports/womens-water-polo",
+        "notes": "Top-5; STEM powerhouse; roster highly competitive"
+      },
+      {
+        "name": "Heather Petri",
+        "position": "Assistant Coach",
+        "email": "heather.petri@berkeley.edu",
+        "profileLink": "https://calbears.com/sports/womens-water-polo",
+        "notes": "Olympic pedigree—great mentor for goalies"
+      },
+      {
+        "name": "Lance Morrison",
+        "position": "Assistant Coach",
+        "email": "lmorriso@berkeley.edu",
+        "profileLink": "https://calbears.com/sports/womens-water-polo",
+        "notes": "Data/analytics contact"
+      }
+    ]
+  },
+  {
+    "id": "ucdavis",
+    "name": "UC Davis",
+    "state": "California",
+    "conference": "Big West",
+    "website": "https://ucdavisaggies.com/sports/womens-water-polo",
+    "address": "1 Shields Ave, Davis CA 95616",
+    "notes": "Big West; replied—positive sign",
+    "distanceSF": 121,
+    "distanceOC": 692,
+    "coaches": [
+      {
+        "name": "Kandace Waldthaler",
+        "position": "Head Coach",
+        "email": "kwaldthaler@ucdavis.edu",
+        "profileLink": "https://ucdavisaggies.com/sports/womens-water-polo",
+        "notes": "Big West; replied—positive sign"
+      },
+      {
+        "name": "Dakotah Sturla",
+        "position": "Assistant Coach",
+        "email": "dlsturla@ucdavis.edu",
+        "profileLink": "https://ucdavisaggies.com/sports/womens-water-polo",
+        "notes": "Keep updated with results"
+      }
+    ]
+  },
+  {
+    "id": "uci",
+    "name": "UC Irvine",
+    "state": "California",
+    "website": "https://ucirvinesports.com/sports/womens-water-polo",
+    "address": "680 California Ave, Irvine CA 92697",
+    "phone": "(949) 824-5778",
+    "notes": "Top-10; partial aid; strong biomechanics lab",
+    "distanceSF": 676,
+    "distanceOC": 0,
+    "coaches": [
+      {
+        "name": "Dan Klatt",
+        "position": "Head Coach",
+        "email": "dklatt@uci.edu",
+        "phone": "(949) 824-5778",
+        "profileLink": "https://ucirvinesports.com/sports/womens-water-polo",
+        "notes": "Top-10; partial aid; strong biomechanics lab"
+      },
+      {
+        "name": "Andrew Rowe",
+        "position": "Associate Head",
+        "email": "ajrowe@uci.edu",
+        "phone": "(949) 824-5778",
+        "profileLink": "https://ucirvinesports.com/sports/womens-water-polo",
+        "notes": "Recruiting coordinator—ask about camp"
+      },
+      {
+        "name": "Alys Moore",
+        "position": "Assistant Coach",
+        "email": "alysw@uci.edu",
+        "phone": "(949) 824-5778",
+        "profileLink": "https://ucirvinesports.com/sports/womens-water-polo",
+        "notes": "Send vertical-jump clip"
+      },
+      {
+        "name": "Jake Liechty",
+        "position": "Assistant Coach",
+        "email": "jliechty@uci.edu",
+        "phone": "(949) 824-7240",
+        "profileLink": "https://ucirvinesports.com/sports/womens-water-polo",
+        "notes": "Handles analytics—provide save-% chart"
+      }
+    ]
+  },
+  {
+    "id": "longbeach",
+    "name": "Long Beach State",
+    "state": "California",
+    "website": "https://longbeachstate.com/sports/womens-water-polo",
+    "address": "1250 N Bellflower Blvd, Long Beach CA 90840",
+    "notes": "Scholarship-friendly; early playing time",
+    "distanceSF": 644,
+    "distanceOC": 40,
+    "coaches": [
+      {
+        "name": "Shana Welch",
+        "position": "Head Coach",
+        "email": "Shana.Welch@csulb.edu",
+        "profileLink": "https://longbeachstate.com/sports/womens-water-polo",
+        "notes": "Scholarship-friendly; early playing time"
+      },
+      {
+        "name": "Katie Card Neidermire",
+        "position": "Assistant Coach",
+        "email": "Kaitlyn.Neidermire@csulb.edu",
+        "profileLink": "https://longbeachstate.com/sports/womens-water-polo",
+        "notes": "CC on updates"
+      },
+      {
+        "name": "Robyn Gordin",
+        "position": "Assistant Coach",
+        "email": "Robyn.Gordin@csulb.edu",
+        "profileLink": "https://longbeachstate.com/sports/womens-water-polo",
+        "notes": "Send May JO video"
+      }
+    ]
+  },
+  {
+    "id": "hawaii",
+    "name": "Hawaii",
+    "state": "HI",
+    "conference": "Big West",
+    "website": "https://hawaiiathletics.com/sports/womens-water-polo",
+    "address": "1337 Lower Campus Rd, Honolulu HI 96822",
+    "notes": "Big West champ; replied—good sign",
+    "coaches": [
+      {
+        "name": "James Robinson",
+        "position": "Head Coach",
+        "email": "jamesrro@hawaii.edu",
+        "profileLink": "https://hawaiiathletics.com/sports/womens-water-polo",
+        "notes": "Big West champ; replied—good sign"
+      },
+      {
+        "name": "Candice Vorbeck",
+        "position": "Assistant Coach",
+        "email": "cvorbeck@hawaii.edu",
+        "profileLink": "https://hawaiiathletics.com/sports/womens-water-polo",
+        "notes": "Questionnaire done—keep dialog"
+      },
+      {
+        "name": "Rebekka Williams",
+        "position": "Assistant Coach",
+        "email": "rebekkaw@hawaii.edu",
+        "profileLink": "https://hawaiiathletics.com/sports/womens-water-polo",
+        "notes": "Travel logistics contact"
+      }
+    ]
+  },
+  {
+    "id": "stanford",
+    "name": "Stanford",
+    "state": "California",
+    "website": "https://gostanford.com/sports/womens-water-polo",
+    "address": "235 Sam McDonald Mall, Stanford CA 94305",
+    "notes": "Top-3; almost all recruits senior-team calibre",
+    "distanceSF": 56,
+    "distanceOC": 595,
+    "coaches": [
+      {
+        "name": "John Tanner",
+        "position": "Director",
+        "email": "jtanner@stanford.edu",
+        "profileLink": "https://gostanford.com/sports/womens-water-polo",
+        "notes": "Top-3; almost all recruits senior-team calibre"
+      },
+      {
+        "name": "Susan Ortwein",
+        "position": "Associate Coach",
+        "email": "sortwein@stanford.edu",
+        "profileLink": "https://gostanford.com/sports/womens-water-polo",
+        "notes": "Day-to-day recruiting—polite follow-up"
+      },
+      {
+        "name": "Kim Krueger",
+        "position": "Assistant Coach",
+        "email": "kkrueger@stanford.edu",
+        "profileLink": "https://gostanford.com/sports/womens-water-polo",
+        "notes": "Goalie mentor—send technical footage"
+      }
+    ]
+  },
+  {
+    "id": "brown",
+    "name": "Brown",
+    "state": "RI",
+    "conference": "Ivy League",
+    "website": "https://brownbears.com/sports/womens-water-polo",
+    "address": "235 Hope St, Providence RI 02906",
+    "phone": "401-863-9042",
+    "notes": "Ivy; need-based aid; roster impact possible",
+    "coaches": [
+      {
+        "name": "Félix Mercado",
+        "position": "Head Coach",
+        "email": "felix_mercado@brown.edu",
+        "phone": "401-863-9042",
+        "profileLink": "https://brownbears.com/sports/womens-water-polo",
+        "notes": "Ivy; need-based aid; roster impact possible"
+      },
+      {
+        "name": "Britt Connell",
+        "position": "Assistant Coach",
+        "email": "brittany_connell@brown.edu",
+        "profileLink": "https://brownbears.com/sports/womens-water-polo",
+        "notes": "Coordinate campus visit"
+      },
+      {
+        "name": "Petar Momcilovic",
+        "position": "Assistant Coach",
+        "email": "petar_momcilovic@brown.edu",
+        "profileLink": "https://brownbears.com/sports/womens-water-polo",
+        "notes": "Former Euro goalie—give technique feedback"
+      }
+    ]
+  }
+]
+

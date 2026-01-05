@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import ProfilePage from './ProfilePage'
+import UniversityTracker from './UniversityTracker'
+import KnowledgeBase from './KnowledgeBase'
+import universitiesData from './universities-data.json'
 import './App.css'
 
 function App() {
@@ -31,16 +34,18 @@ function App() {
     setOutput('Generating your personalized response...')
 
     try {
-      // Get saved profile data
+      // Get saved profile data and custom instructions
       const profileData = localStorage.getItem('athleteProfile')
       const profile = profileData ? JSON.parse(profileData) : null
+      const customInstructions = localStorage.getItem('customInstructions') || ''
 
       const res = await fetch('/api/coach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          profile // Include profile data in the request
+          profile, // Include profile data
+          customInstructions // Include custom instructions
         })
       })
 
@@ -66,6 +71,14 @@ function App() {
     return <ProfilePage />
   }
 
+  if (currentPage === 'tracker') {
+    return <UniversityTracker />
+  }
+
+  if (currentPage === 'knowledge') {
+    return <KnowledgeBase />
+  }
+
   return (
     <div className="app">
       <div className="container">
@@ -85,7 +98,19 @@ function App() {
               className={currentPage === 'profile' ? 'tab active' : 'tab'}
               onClick={() => setCurrentPage('profile')}
             >
-              Profile & Updates
+              Profile
+            </button>
+            <button 
+              className={currentPage === 'tracker' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('tracker')}
+            >
+              Universities
+            </button>
+            <button 
+              className={currentPage === 'knowledge' ? 'tab active' : 'tab'}
+              onClick={() => setCurrentPage('knowledge')}
+            >
+              Knowledge Base
             </button>
           </div>
         </div>
@@ -125,13 +150,18 @@ function App() {
             </div>
             <div className="form-group">
               <label>School / Program</label>
-              <input
+              <select
                 name="school"
                 value={formData.school}
                 onChange={handleChange}
-                placeholder="e.g., UCLA"
                 required
-              />
+              >
+                <option value="">Select a university...</option>
+                {universitiesData.map(uni => (
+                  <option key={uni.id} value={uni.name}>{uni.name}</option>
+                ))}
+                <option value="other">Other (not in list)</option>
+              </select>
             </div>
           </div>
 
